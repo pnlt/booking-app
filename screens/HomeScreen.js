@@ -35,6 +35,7 @@ const HomeScreen = () => {
     navigation.setOptions({
       headerShown: true,
       title: 'Booking.com',
+      headerTitleAlign: 'center',
       headerTitleStyle: {
         fontSize: 20,
         fontWeight: 'bold',
