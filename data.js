@@ -502,9 +502,11 @@ const services = [
   }
 ]
 
-;<Image
-  style={{ width: 200, height: 50, resizeMode: 'cover' }}
-  source={{
-    uri: 'https://assets.stickpng.com/thumbs/5a32a821cb9a85480a628f8f.png'
-  }}
-/>
+// ;<Image
+//   style={{ width: 200, height: 50, resizeMode: 'cover' }}
+//   source={{
+//     uri: 'https://assets.stickpng.com/thumbs/5a32a821cb9a85480a628f8f.png'
+//   }}
+// />
+// module.exports = data
+console.log(JSON.stringify(data))

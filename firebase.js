@@ -1,6 +1,6 @@
 import { getApp, initializeApp } from 'firebase/app'
 import { getAuth } from 'firebase/auth'
-import { getFireStore } from 'firebase/firestore'
+import { getFirestore } from 'firebase/firestore'
 const firebaseConfig = {
   apiKey: 'AIzaSyDFk7HhXdKCvFdfHA8Dt4w1nQfSLi5wCUI',
   authDomain: 'booking-app-8e922.firebaseapp.com',
@@ -12,5 +12,5 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 const auth = getAuth(app)
-const db = getFireStore()
+const db = getFirestore()
 export { auth, db }
