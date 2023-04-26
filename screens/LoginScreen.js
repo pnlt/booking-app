@@ -5,148 +5,148 @@ import {
   SafeAreaView,
   KeyboardAvoidingView,
   TextInput,
-  Pressable,
-} from "react-native";
-import React, { useState, useEffect } from "react";
-import { useNavigation } from "@react-navigation/native";
-import { auth } from "../firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+  Pressable
+} from 'react-native'
+import React, { useState, useEffect } from 'react'
+import { useNavigation } from '@react-navigation/native'
+import { auth } from '../firebase'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
 const LoginScreen = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigation = useNavigation();
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const navigation = useNavigation()
 
-//   console.log(userCredentials.user.stsTokenManager.accessToken);
-//   AsyncStorage.setItem(
-//     "tokenUser",
-//     userCredentials.user.stsTokenManager.accessToken
-//   );
+  //   console.log(userCredentials.user.stsTokenManager.accessToken);
+  //   AsyncStorage.setItem(
+  //     "tokenUser",
+  //     userCredentials.user.stsTokenManager.accessToken
+  //   );
 
-//   useEffect(() => {
-//     const getMyObject = async () => {
-//       try {
-//         const jsonValue = await AsyncStorage.getItem("tokenUser");
-//         console.log("jsonValue");
-//         if (jsonValue) {
-//           navigation.replace("Main");
-//         }
-//       } catch (e) {
-//         console.log(e);
-//       }
-//     };
-//     getMyObject();
-//   }, [token]);
+  //   useEffect(() => {
+  //     const getMyObject = async () => {
+  //       try {
+  //         const jsonValue = await AsyncStorage.getItem("tokenUser");
+  //         console.log("jsonValue");
+  //         if (jsonValue) {
+  //           navigation.replace("Main");
+  //         }
+  //       } catch (e) {
+  //         console.log(e);
+  //       }
+  //     };
+  //     getMyObject();
+  //   }, [token]);
 
- const login = () => {
-     signInWithEmailAndPassword(auth,email,password).then((userCredential) => {
-        console.log("user credential", userCredential);
-        const user = userCredential.user;
-        console.log("user details", user);
-     })
- }
+  const login = () => {
+    signInWithEmailAndPassword(auth, email, password).then(userCredential => {
+      console.log('user credential', userCredential)
+      const user = userCredential.user
+      console.log('user details', user)
+    })
+  }
 
   useEffect(() => {
     try {
-      const unsubscribe = auth.onAuthStateChanged((authUser) => {
+      const unsubscribe = auth.onAuthStateChanged(authUser => {
         if (authUser) {
-          navigation.replace("Main");
+          navigation.replace('Main')
         }
-      });
+      })
 
-      return unsubscribe;
+      return unsubscribe
     } catch (e) {
-      console.log(e);
+      console.log(e)
     }
-  }, []);
+  }, [])
 
   return (
     <SafeAreaView
       style={{
         flex: 1,
-        backgroundColor: "white",
+        backgroundColor: 'white',
         padding: 10,
-        alignItems: "center",
+        alignItems: 'center'
       }}
     >
       <KeyboardAvoidingView>
         <View
           style={{
-            justifyContent: "center",
-            alignItems: "center",
-            marginTop: 100,
+            justifyContent: 'center',
+            alignItems: 'center',
+            marginTop: 100
           }}
         >
-          <Text style={{ color: "#003580", fontSize: 17, fontWeight: "700" }}>
+          <Text style={{ color: '#003580', fontSize: 17, fontWeight: '700' }}>
             Sign In
           </Text>
 
-          <Text style={{ marginTop: 15, fontSize: 18, fontWeight: "500" }}>
+          <Text style={{ marginTop: 15, fontSize: 18, fontWeight: '500' }}>
             Sign In to Your Account
           </Text>
         </View>
 
         <View style={{ marginTop: 50 }}>
           <View>
-            <Text style={{ fontSize: 18, fontWeight: "600", color: "gray" }}>
+            <Text style={{ fontSize: 18, fontWeight: '600', color: 'gray' }}>
               Email
             </Text>
 
             <TextInput
               value={email}
-              onChangeText={(text) => setEmail(text)}
+              onChangeText={text => setEmail(text)}
               placeholder="enter your email id"
-              placeholderTextColor={"black"}
+              placeholderTextColor={'black'}
               style={{
                 fontSize: email ? 18 : 18,
-                borderBottomColor: "gray",
+                borderBottomColor: 'gray',
                 borderBottomWidth: 1,
                 marginVertical: 10,
-                width: 300,
+                width: 300
               }}
             />
           </View>
 
           <View style={{ marginTop: 15 }}>
-            <Text style={{ fontSize: 18, fontWeight: "600", color: "gray" }}>
+            <Text style={{ fontSize: 18, fontWeight: '600', color: 'gray' }}>
               Password
             </Text>
 
             <TextInput
               value={password}
-              onChangeText={(text) => setPassword(text)}
+              onChangeText={text => setPassword(text)}
               secureTextEntry={true}
               placeholder="Password"
-              placeholderTextColor={"black"}
+              placeholderTextColor={'black'}
               style={{
                 fontSize: password ? 18 : 18,
-                borderBottomColor: "gray",
+                borderBottomColor: 'gray',
                 borderBottomWidth: 1,
                 marginVertical: 10,
-                width: 300,
+                width: 300
               }}
             />
           </View>
         </View>
 
         <Pressable
-        onPress={login}
+          onPress={login}
           style={{
             width: 200,
-            backgroundColor: "#003580",
+            backgroundColor: '#003580',
             padding: 15,
             borderRadius: 7,
             marginTop: 50,
-            marginLeft: "auto",
-            marginRight: "auto",
+            marginLeft: 'auto',
+            marginRight: 'auto'
           }}
         >
           <Text
             style={{
-              textAlign: "center",
-              color: "white",
+              textAlign: 'center',
+              color: 'white',
               fontSize: 17,
-              fontWeight: "bold",
+              fontWeight: 'bold'
             }}
           >
             Login
@@ -154,18 +154,18 @@ const LoginScreen = () => {
         </Pressable>
 
         <Pressable
-          onPress={() => navigation.navigate("Register")}
+          onPress={() => navigation.navigate('Register')}
           style={{ marginTop: 20 }}
         >
-          <Text style={{ textAlign: "center", color: "gray", fontSize: 17 }}>
+          <Text style={{ textAlign: 'center', color: 'gray', fontSize: 17 }}>
             Don't have an account? Sign up
           </Text>
         </Pressable>
       </KeyboardAvoidingView>
     </SafeAreaView>
-  );
-};
+  )
+}
 
-export default LoginScreen;
+export default LoginScreen
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({})

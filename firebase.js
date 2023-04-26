@@ -1,22 +1,16 @@
-
-import { getApp, initializeApp } from "firebase/app";
-import {getAuth} from "firebase/auth";
-import {getFirestore} from "firebase/firestore";
-
+import { getApp, initializeApp } from 'firebase/app'
+import { getAuth } from 'firebase/auth'
+import { getFireStore } from 'firebase/firestore'
 const firebaseConfig = {
-  apiKey: "AIzaSyDwBeoZMo89ie6_o0Acl2ApP1PQNJa0DPc",
-  authDomain: "booking-app-fd322.firebaseapp.com",
-  projectId: "booking-app-fd322",
-  storageBucket: "booking-app-fd322.appspot.com",
-  messagingSenderId: "256540609352",
-  appId: "1:256540609352:web:e6ea70879ac9cb7131817d"
-};
+  apiKey: 'AIzaSyDFk7HhXdKCvFdfHA8Dt4w1nQfSLi5wCUI',
+  authDomain: 'booking-app-8e922.firebaseapp.com',
+  projectId: 'booking-app-8e922',
+  storageBucket: 'booking-app-8e922.appspot.com',
+  messagingSenderId: '704348595987',
+  appId: '1:704348595987:web:157604e9cc82802d8c5ce6'
+}
 
-
-const app = initializeApp(firebaseConfig);
-
-const auth = getAuth(app);
-
-const db = getFirestore();
-
-export {auth,db};
+const app = initializeApp(firebaseConfig)
+const auth = getAuth(app)
+const db = getFireStore()
+export { auth, db }
