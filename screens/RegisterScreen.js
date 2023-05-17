@@ -23,7 +23,7 @@ const RegisterScreen = () => {
   const register = () => {
     if (email === '' || password === '' || phone === '') {
       Alert.alert(
-        'Invalid Detials',
+        'Invalid Details',
         'Please enter all the credentials',
         [
           {

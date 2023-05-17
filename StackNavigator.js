@@ -1,5 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import HomeScreen from './screens/HomeScreen'
@@ -105,11 +105,13 @@ const StackNavigator = () => {
           component={RegisterScreen}
           options={{ headerShown: false }}
         />
+
         <Stack.Screen
           name="Main"
           component={BottomTabs}
           options={{ headerShown: false }}
         />
+
         <Stack.Screen
           name="Search"
           component={SearchScreen}

@@ -1,7 +1,7 @@
 const data = [
   {
     id: '0',
-    place: 'Bangalore',
+    place: 'GIT2004',
     placeImage:
       'https://images.pexels.com/photos/7630190/pexels-photo-7630190.jpeg?auto=compress&cs=tinysrgb&w=800',
     shortDescription: 'City in Karnataka, India',
